@@ -1,21 +1,21 @@
 package User;
+import java.util.HashMap;
+import sistem.*;
 
-public class User {
-    private String nama;
-    private String email;
-    private KeranjangBelanja keranjang;
+public class User extends Account {
+    private Perpustakaan perpus;
 
-    public Pengguna(String nama, String email) {
-        this.nama = nama;
-        this.email = email;
-        this.keranjang = new KeranjangBelanja();
+    public User(Perpustakaan perpus, String nama, String username, String password) {
+        super(nama, username, password);
+        this.perpus = perpus;
+    }
+    
+    public Perpustakaan getPerpus() {
+        return perpus;
     }
 
-    public KeranjangBelanja getKeranjang() {
-        return keranjang;
+    public void setPerpus(Perpustakaan perpus) {
+        this.perpus = perpus;
     }
 
-    public String getNama() {
-        return nama;
-    }
 }

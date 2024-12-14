@@ -6,34 +6,29 @@ public class Sejarah extends Book{
     private String periodeSejarah;
     private String lokasiSejarah;
     private double discountRate = 0.2;
-
-    public Sejarah(String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, String Kategori, int tahunTerbit, double rating, String periodeSejarah, String lokasiSejarah) {
-        super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, Kategori, tahunTerbit, rating);
+    
+    public Sejarah(String periodeSejarah, String lokasiSejarah, String title, String isbn, String author, int price, int publicationYear, String publication, double rating, String category) {
+        super(title, isbn, author, price, publicationYear, publication, rating, category);
         this.periodeSejarah = periodeSejarah;
         this.lokasiSejarah = lokasiSejarah;
-
     }
 
     public double hargaDiskon(){
-        return super.getHarga() * this.discountRate;
-    }
-
-    @Override
-    public void printInfoBuku(){
-        System.out.println("ID Buku : " + super.getIdBuku());
-        System.out.println("Judul Buku : " + super.getJudulBuku());
-        System.out.println("Nama Penulis : " + super.namaPenulis);
-        System.out.println("Penerbit : " + super.namaPenerbit);
-        System.out.println("Kategori : " + super.Kategori);
-        System.out.println("Tahun Terbit : " + super.tahunTerbit);
-        System.out.println("Rating : " + super.rating);
-        System.out.println("Periode Sejarah : " + this.periodeSejarah);
-        System.out.println("Lokasi Sejarah : " + this.lokasiSejarah);
-        System.out.println("Tahun Terbit : " + super.tahunTerbit);
-        System.out.println("Harga : " + hargaDiskon());
+        return super.getPrice() * this.discountRate;
     }
 
     public double dapatHarga(){
         return hargaDiskon();
     }
+
+    @Override
+    public void displayBookDetails() {
+        super.displayBookDetails(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        System.out.println("Periode Sejarah : " + this.periodeSejarah);
+        System.out.println("Lokasi Sejarah : " + this.periodeSejarah);
+    }
+    
+    
+    
+    
 }

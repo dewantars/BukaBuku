@@ -1,4 +1,4 @@
-package Book;
+package sistem;
 
 public class ReadBook {
     private String tanggalTerakhirBaca;

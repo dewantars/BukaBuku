@@ -1,6 +1,7 @@
 package Book;
 
-public abstract class Book implements IBook{
+public class Book implements IBook {
+
     private String title;
     private String isbn;
     private String author;
@@ -10,7 +11,7 @@ public abstract class Book implements IBook{
     private String category;
     private double rating;
 
-    public Book(String title, String isbn, String author, int price, int publicationYear, String publication, String category, double rating) {
+    public Book(String title, String isbn, String author, int price, int publicationYear, String publication, double rating, String category) {
         this.title = title;
         this.isbn = isbn;
         this.author = author;
@@ -55,5 +56,18 @@ public abstract class Book implements IBook{
         System.out.println("Harga: Rp " + price);
         System.out.println("Tahun Terbit: " + publicationYear);
         System.out.println("Penerbit: " + publication);
+        System.out.println("Kategori: " + this.category);
+        System.out.println("Rating: " + this.rating);
     }
+
+    @Override
+    public String getCategory() {
+        return category;
+    }
+
+    @Override
+    public String toString() {
+        return ". " + title + "\t" + this.isbn +"\t" + author + "\t" + this.category + "\t" + this.rating + "\t" + this.price ;
+    }
+
 }

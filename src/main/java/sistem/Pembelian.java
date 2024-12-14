@@ -1,4 +1,4 @@
-package User;
+package sistem;
 
 public class Pembelian {
     protected String idPembelian;

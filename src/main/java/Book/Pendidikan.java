@@ -6,28 +6,24 @@ public class Pendidikan extends  Book{
     private String namaBidang;
     private double discountRate = 0.5;
 
-    public Pendidikan(String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, String Kategori, int tahunTerbit, double rating, String namaBidang) {
-        super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, Kategori, tahunTerbit, rating);
+    public Pendidikan(String namaBidang, String title, String isbn, String author, int price, int publicationYear, String publication, double rating, String category) {
+        super(title, isbn, author, price, publicationYear, publication, rating, "Pendidikan");
         this.namaBidang = namaBidang;
     }
-
+    
     public double hargaDiskon(){
-        return super.getHarga() * discountRate;
-    }
-
-    @Override
-    public void printInfoBuku() {
-        System.out.println("ID Buku : " + super.getIdBuku());
-        System.out.println("Judul Buku : " + super.getJudulBuku());
-        System.out.println("Nama Penulis : " + super.namaPenulis);
-        System.out.println("Penerbit : " + super.namaPenerbit);
-        System.out.println("Kategori : " + super.Kategori);
-        System.out.println("Tahun Terbit : " + super.tahunTerbit);
-        System.out.println("Rating : " + super.rating);
-        System.out.println("Harga : " + hargaDiskon());
+        return super.getPrice() * discountRate;
     }
 
     public double dapatHarga(){
         return hargaDiskon();
     }
+
+    @Override
+    public void displayBookDetails() {
+        super.displayBookDetails(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        System.out.println("Nama Bidang Pengetahuan : " + this.namaBidang);
+    }
+    
+    
 }

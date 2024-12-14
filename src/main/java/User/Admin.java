@@ -1,5 +1,6 @@
 package User;
 
+import sistem.Keranjang;
 import Book.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,10 +8,12 @@ import java.util.List;
 public class Admin extends Account{
     private List<Book> daftarBuku;
 
-    public Admin(List<Book> daftarBuku, String nama, String username, String password, Keranjang keranjang) {
-        super(nama, username, password, keranjang);
+    public Admin(String nama, String username, String password) {
+        super(nama, username, password);
         this.daftarBuku = daftarBuku;
     }
+
+    
     
     
 }

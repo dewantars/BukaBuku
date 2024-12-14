@@ -1,12 +1,14 @@
 package User;
 
+import sistem.Keranjang;
 
-public class Account {
+
+public abstract class Account{
     private String nama;
     private String username;
     private String password;
 
-    public Account(String nama, String username, String password, Keranjang keranjang) {
+    public Account(String nama, String username, String password) {
         this.nama = nama;
         this.username = username;
         this.password = password;
