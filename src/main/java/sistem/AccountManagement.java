@@ -14,7 +14,16 @@ public class AccountManagement {
     private HashMap<String, Account> daftarAccount = new HashMap<>();
     
     public AccountManagement(){
-        daftarAccount.put("Dewanta", new Admin("dewan", "dewa", "dewa123"));
+        daftarAccount.put("dewa", new Admin("dewan", "dewa", "dewa123"));
         
     }
+    
+    public Account getAccount(String username) throws Exception {
+        if (!daftarAccount.containsKey(username)){
+            throw new Exception("Akun tidak ditemukan");
+        }
+        return daftarAccount.get(username);
+    }
+    
+    
 }
