@@ -3,7 +3,6 @@ package Book;
 public class Book implements IBook {
 
     private String title;
-    private String isbn;
     private String author;
     private int price;
     private int publicationYear;
@@ -11,9 +10,8 @@ public class Book implements IBook {
     private String category;
     private double rating;
 
-    public Book(String title, String isbn, String author, int price, int publicationYear, String publication, double rating, String category) {
+    public Book(String title, String author, int price, int publicationYear, String publication, double rating, String category) {
         this.title = title;
-        this.isbn = isbn;
         this.author = author;
         this.price = price;
         this.publicationYear = publicationYear;
@@ -43,15 +41,10 @@ public class Book implements IBook {
     public int getPublicationYear() {
         return publicationYear;
     }
-
-    public String getIsbn() {
-        return isbn;
-    }
-
+    
     @Override
     public void displayBookDetails() {
         System.out.println("Judul: " + title);
-        System.out.println("ISBN: " + isbn);
         System.out.println("Penulis: " + author);
         System.out.println("Harga: Rp " + price);
         System.out.println("Tahun Terbit: " + publicationYear);
@@ -67,7 +60,7 @@ public class Book implements IBook {
 
     @Override
     public String toString() {
-        return ". " + title + "\t" + this.isbn +"\t" + author + "\t" + this.category + "\t" + this.rating + "\t" + this.price ;
+        return ". " + title +"\t" + author + "\t" + this.category + "\t" + this.rating + "\t" + this.price ;
     }
 
 }

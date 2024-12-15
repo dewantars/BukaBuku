@@ -5,8 +5,8 @@ import Book.Book;
 public class Komik extends Book {
     private String genreKomik;
 
-    public Komik(String genreKomik, String title, String isbn, String author, int price, int publicationYear, String publication, double rating, String category) {
-        super(title, isbn, author, price, publicationYear, publication, rating, category);
+    public Komik(String title, String author, int price, int publicationYear, String publication, double rating, String genreKomik) {
+        super(title, author, price, publicationYear, publication, rating, "Komik");
         this.genreKomik = genreKomik;
     }
 
@@ -14,4 +14,13 @@ public class Komik extends Book {
         super.displayBookDetails();
         System.out.println("Genre : " + genreKomik);
     }
+
+    public String getGenreKomik() {
+        return genreKomik;
+    }
+
+    public void setGenreKomik(String genreKomik) {
+        this.genreKomik = genreKomik;
+    }
+    
 }

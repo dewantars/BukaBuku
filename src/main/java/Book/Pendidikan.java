@@ -6,8 +6,8 @@ public class Pendidikan extends  Book{
     private String namaBidang;
     private double discountRate = 0.5;
 
-    public Pendidikan(String namaBidang, String title, String isbn, String author, int price, int publicationYear, String publication, double rating, String category) {
-        super(title, isbn, author, price, publicationYear, publication, rating, "Pendidikan");
+    public Pendidikan(String title, String author, int price, int publicationYear, String publication, double rating, String namaBidang) {
+        super(title, author, price, publicationYear, publication, rating, "Pendidikan");
         this.namaBidang = namaBidang;
     }
     
@@ -23,6 +23,22 @@ public class Pendidikan extends  Book{
     public void displayBookDetails() {
         super.displayBookDetails(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
         System.out.println("Nama Bidang Pengetahuan : " + this.namaBidang);
+    }
+
+    public String getNamaBidang() {
+        return namaBidang;
+    }
+
+    public void setNamaBidang(String namaBidang) {
+        this.namaBidang = namaBidang;
+    }
+
+    public double getDiscountRate() {
+        return discountRate;
+    }
+
+    public void setDiscountRate(double discountRate) {
+        this.discountRate = discountRate;
     }
     
     

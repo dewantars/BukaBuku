@@ -7,8 +7,8 @@ public class Sejarah extends Book{
     private String lokasiSejarah;
     private double discountRate = 0.2;
     
-    public Sejarah(String periodeSejarah, String lokasiSejarah, String title, String isbn, String author, int price, int publicationYear, String publication, double rating, String category) {
-        super(title, isbn, author, price, publicationYear, publication, rating, category);
+    public Sejarah(String title, String author, int price, int publicationYear, String publication, double rating, String periodeSejarah, String lokasiSejarah) {
+        super(title, author, price, publicationYear, publication, rating, "Sejarah");
         this.periodeSejarah = periodeSejarah;
         this.lokasiSejarah = lokasiSejarah;
     }
@@ -26,6 +26,30 @@ public class Sejarah extends Book{
         super.displayBookDetails(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
         System.out.println("Periode Sejarah : " + this.periodeSejarah);
         System.out.println("Lokasi Sejarah : " + this.periodeSejarah);
+    }
+
+    public String getPeriodeSejarah() {
+        return periodeSejarah;
+    }
+
+    public void setPeriodeSejarah(String periodeSejarah) {
+        this.periodeSejarah = periodeSejarah;
+    }
+
+    public String getLokasiSejarah() {
+        return lokasiSejarah;
+    }
+
+    public void setLokasiSejarah(String lokasiSejarah) {
+        this.lokasiSejarah = lokasiSejarah;
+    }
+
+    public double getDiscountRate() {
+        return discountRate;
+    }
+
+    public void setDiscountRate(double discountRate) {
+        this.discountRate = discountRate;
     }
     
     

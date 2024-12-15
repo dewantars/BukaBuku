@@ -1,20 +1,33 @@
 package sistem;
 
-import Book.Book;
-import Book.Book;
+import Book.*;
+import java.util.HashMap;
 
 public class Perpustakaan {
-    private Book[] listBuku;
+    private HashMap<String, Book> koleksiBuku = new HashMap<>();
 
-    public void showBuku(){
-
+    public void beliBuku(String id, Book buku) throws Exception {
+        if (koleksiBuku.containsKey(id)) {
+            throw new Exception("Buku sudah dibeli!");
+        }
+        koleksiBuku.put(id, buku);
+        System.out.println("Buku " + buku.getTitle() + " berhasil dibeli.");
     }
 
-    public void tambahBuku(){
-
+    public void hapusBuku(String id) throws Exception {
+        if (!koleksiBuku.containsKey(id)) {
+            throw new Exception("Buku tidak ditemukan!");
+        }
+        Book buku = koleksiBuku.remove(id);
+        System.out.println("Buku " + buku.getTitle() + " berhasil dihapus.");
     }
 
-    public void refundBuku(){
-
+    public void printBuku() {
+        if (koleksiBuku.isEmpty()) {
+            System.out.println("Tidak ada buku dalam koleksi.");
+        } else {
+            System.out.println("Daftar Buku yang Dibeli:");
+            koleksiBuku.forEach((id, Book) -> System.out.println(id + " - " + Book.getTitle() + " - " + Book.getCategory()));
+        }
     }
 }
