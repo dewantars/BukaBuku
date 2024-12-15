@@ -4,26 +4,14 @@
  */
 package sistem;
 
-import java.util.HashMap;
 import User.*;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Dewanta Rahma Satria
  */
 public class AccountManagement {
-    private HashMap<String, Account> daftarAccount = new HashMap<>();
-    
-    public AccountManagement(){
-        daftarAccount.put("dewa", new Admin("dewan", "dewa", "dewa123"));
-        
-    }
-    
-    public Account getAccount(String username) throws Exception {
-        if (!daftarAccount.containsKey(username)){
-            throw new Exception("Akun tidak ditemukan");
-        }
-        return daftarAccount.get(username);
-    }
-    
-    
+    private List<Admin> daftarAdmin = new ArrayList<>();
+    private List<User> daftarUser = new ArrayList<>();
 }
